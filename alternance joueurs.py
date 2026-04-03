@@ -26,9 +26,12 @@ def play(self):
             print("Ce n'est pas ta pièce !")
             continue
 
-        # coup invalide
+        # coups invalides
         if not piece.isValidMove(end, self.board):
             print("Coup invalide")
+
+        if not self.isMoveSafe(piece, end):
+            print("Ce coup te met en échec !")
             continue
 
         # prise de pièce
